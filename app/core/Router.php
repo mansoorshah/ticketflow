@@ -7,11 +7,18 @@ class Router
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $url = explode('/', $url);
 
-        $controllerName = !empty($url[0]) ? ucfirst($url[0]) . 'Controller' : 'HomeController';
-        $method = $url[1] ?? 'index';
-        $params = array_slice($url, 2);
+        if ($url[0] === 'api') {
+            $controllerName = ucfirst($url[1]) . 'ApiController';
+            $method = $url[2] ?? 'index';
+            $params = array_slice($url, 3);
+            $controllerFile = "../app/controllers/Api/{$controllerName}.php";
+        } else {
+            $controllerName = !empty($url[0]) ? ucfirst($url[0]) . 'Controller' : 'HomeController';
+            $method = $url[1] ?? 'index';
+            $params = array_slice($url, 2);
+            $controllerFile = "../app/controllers/{$controllerName}.php";
+        }
 
-        $controllerFile = "../app/controllers/{$controllerName}.php";
 
         if (!file_exists($controllerFile)) {
             die("Controller not found");

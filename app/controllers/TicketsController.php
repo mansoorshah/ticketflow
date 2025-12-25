@@ -157,6 +157,22 @@ class TicketsController
 
 	}
 
+
+
+	public function assigned()
+	{
+		Auth::requireLogin();
+
+		$userId = Auth::user()['id'];
+
+		$ticketModel = new Ticket();
+		$tickets = $ticketModel->getAssignedToUser($userId);
+
+		require_once "../app/views/tickets/assigned_to_me.php";
+	}
+
+
+
 	
 
 }

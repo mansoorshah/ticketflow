@@ -107,5 +107,24 @@ class Ticket
 		]);
 	}
 
+	public function getAssignedToUser($userId)
+	{
+		$sql = "
+			SELECT t.*, 
+				p.name AS project_name,
+				u.name AS assignee_name
+			FROM tickets t
+			LEFT JOIN projects p ON p.id = t.project_id
+			LEFT JOIN users u ON u.id = t.assignee_id
+			WHERE t.assignee_id = ?
+			ORDER BY t.created_at DESC
+		";
+
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute([$userId]);
+
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 
 }

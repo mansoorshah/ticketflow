@@ -7,6 +7,7 @@
 
             <a href="/ticketflow/public/dashboard">Dashboard</a>
             <a href="/ticketflow/public/projects">Projects</a>
+            <a href="/ticketflow/public/tickets/assigned">Assigned to Me</a>
 
             <hr>
 
