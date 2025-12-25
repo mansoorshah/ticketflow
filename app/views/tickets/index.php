@@ -46,7 +46,6 @@
 					];
 					?>
 
-					<td>
 						<span class="badge <?= $priorityColors[$ticket['priority']] ?>">
 							<?= ucfirst($ticket['priority']) ?>
 						</span>
