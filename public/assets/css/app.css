@@ -1,0 +1,50 @@
+/* ===== Priority badges ===== */
+.badge-priority-low {
+    background-color: #E7F1FF;
+    color: #0B5ED7;
+}
+
+.badge-priority-medium {
+    background-color: #FFF4CC;
+    color: #997404;
+}
+
+.badge-priority-high {
+    background-color: #FCE8E6;
+    color: #B02A37;
+}
+
+/* ===== Status badges ===== */
+.badge-status-open {
+    background-color: #E9ECEF;
+    color: #495057;
+}
+
+.badge-status-in-progress {
+    background-color: #E3F2FD;
+    color: #0D6EFD;
+}
+
+.badge-status-done {
+    background-color: #E6F4EA;
+    color: #146C43;
+}
+
+.badge-status-closed {
+    background-color: #F1F3F5;
+    color: #6C757D;
+}
+
+/* Optional polish */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.6em;
+    border-radius: 0.4rem;
+}
+
+/* ===== Critical priority ===== */
+.badge-priority-critical {
+    background-color: #F8D7DA;
+    color: #842029 !important;
+    font-weight: 600 !important;
+}

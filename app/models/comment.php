@@ -27,6 +27,80 @@ class Comment
             INSERT INTO comments (ticket_id, user_id, body)
             VALUES (?, ?, ?)
         ");
-        return $stmt->execute([$ticketId, $userId, $body]);
+
+        $stmt->execute([$ticketId, $userId, $body]);
+
+        // ✅ THIS IS THE FIX
+        return $this->db->lastInsertId();
     }
+
+
+
+    public function addAttachment($commentId, $file)
+    {
+        $allowed = ['jpg','jpeg','png','pdf','docx','xlsx','zip'];
+        $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+
+        if (!in_array($ext, $allowed)) {
+            return false;
+        }
+
+        if ($file['size'] > 5 * 1024 * 1024) {
+            return false; // 5MB limit
+        }
+
+        $uploadDir = __DIR__ . '/../../public/uploads/comments/';
+        $safeName = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', $file['name']);
+        $targetPath = $uploadDir . $safeName;
+
+        if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
+            return false;
+        }
+
+        $stmt = $this->db->prepare("
+            INSERT INTO comment_attachments
+            (comment_id, file_name, file_path, file_size)
+            VALUES (?, ?, ?, ?)
+        ");
+
+        return $stmt->execute([
+            $commentId,
+            $file['name'],
+            'uploads/comments/' . $safeName,
+            $file['size']
+        ]);
+    }
+
+    public function getAttachments($commentId)
+    {
+        $stmt = $this->db->prepare("
+            SELECT * FROM comment_attachments
+            WHERE comment_id = ?
+            ORDER BY uploaded_at ASC
+        ");
+        $stmt->execute([$commentId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getByTicketWithAttachments($ticketId)
+    {
+        $stmt = $this->db->prepare("
+            SELECT c.*, u.name
+            FROM comments c
+            JOIN users u ON u.id = c.user_id
+            WHERE c.ticket_id = ?
+            ORDER BY c.created_at ASC
+        ");
+        $stmt->execute([$ticketId]);
+        $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($comments as &$comment) {
+            $comment['attachments'] = $this->getAttachments($comment['id']);
+        }
+
+        return $comments;
+    }
+
+
+
 }

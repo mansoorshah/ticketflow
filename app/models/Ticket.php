@@ -126,5 +126,85 @@ class Ticket
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function addCommentAttachment($commentId, $file)
+	{
+		$allowed = ['jpg','jpeg','png','pdf','docx','xlsx','zip'];
+		$ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+
+		if (!in_array($ext, $allowed)) {
+			return false;
+		}
+
+		if ($file['size'] > 5 * 1024 * 1024) {
+			return false; // 5MB limit
+		}
+
+		$uploadDir = __DIR__ . '/../../public/uploads/comments/';
+		$safeName = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', $file['name']);
+		$targetPath = $uploadDir . $safeName;
+
+		if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
+			return false;
+		}
+
+		$stmt = $this->db->prepare("
+			INSERT INTO comment_attachments
+			(comment_id, file_name, file_path, file_size)
+			VALUES (?, ?, ?, ?)
+		");
+
+		return $stmt->execute([
+			$commentId,
+			$file['name'],
+			'uploads/comments/' . $safeName,
+			$file['size']
+		]);
+	}
+
+	public function getCommentAttachments($commentId)
+	{
+		$stmt = $this->db->prepare("
+			SELECT * FROM comment_attachments
+			WHERE comment_id = ?
+			ORDER BY uploaded_at ASC
+		");
+		$stmt->execute([$commentId]);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function getCommentsWithAttachments($ticketId)
+	{
+		// Get comments
+		$stmt = $this->db->prepare("
+			SELECT c.id, c.body, c.created_at, u.name
+			FROM ticket_comments c
+			JOIN users u ON u.id = c.user_id
+			WHERE c.ticket_id = ?
+			ORDER BY c.created_at ASC
+		");
+		$stmt->execute([$ticketId]);
+		$comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		// Attach files to each comment
+		foreach ($comments as &$comment) {
+			$comment['attachments'] = $this->getCommentAttachments($comment['id']);
+		}
+
+		return $comments;
+	}
+
+	public function countAssignedToUser($userId)
+	{
+		$stmt = $this->db->prepare("
+			SELECT COUNT(*) 
+			FROM tickets 
+			WHERE assignee_id = ?
+		");
+		$stmt->execute([$userId]);
+		return (int) $stmt->fetchColumn();
+	}
+
+
+
 
 }

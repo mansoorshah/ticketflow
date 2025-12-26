@@ -33,4 +33,16 @@ class AuthApiController
             'token' => $token
         ]);
     }
+
+    public function me()
+    {
+        $user = ApiAuth::requireAuth();
+
+        unset($user['password'], $user['api_token']);
+
+        echo json_encode([
+            'success' => true,
+            'data' => $user
+        ]);
+    }
 }

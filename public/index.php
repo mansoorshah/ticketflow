@@ -13,7 +13,8 @@ spl_autoload_register(function ($class) {
     $paths = [
         "../app/core/",
         "../app/controllers/",
-        "../app/models/"
+        "../app/models/",
+        "../app/helpers/"
     ];
 
     foreach ($paths as $path) {
@@ -31,6 +32,7 @@ spl_autoload_register(function ($class) {
  |-------------------------------------------------------
  */
 require_once "../config/config.php";
+require_once __DIR__ . '/../app/helpers/BadgeHelper.php';
 
 /*
  |-------------------------------------------------------

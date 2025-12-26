@@ -10,9 +10,7 @@
 <div class="card shadow-sm mb-4">
     <div class="card-body">
 
-        <p class="mb-4">
-            <?= nl2br(htmlspecialchars($ticket['description'])) ?>
-        </p>
+
 
         <!-- Status + Assignment + Metadata -->
         <div class="row g-3">
@@ -20,7 +18,7 @@
             <!-- Status -->
             <div class="col-md-3">
                 <form method="post"
-                      action="/ticketflow/public/tickets/updateStatus/<?= $ticket['id'] ?>">
+                      action="/ticketflow/public/tickets/updateStatus/<?= $ticket['id'] ?>" >
                     <label class="form-label fw-bold">Status</label>
                     <select name="status"
                             class="form-select"
@@ -99,7 +97,19 @@
         </div>
     </div>
 </div>
-
+<!-- Description -->
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h5 class="mb-3">Issue Summary</h5>
+        <div class="row g-3"> 
+            <div class="col-md-3">   
+                <p class="mb-4">
+                    <?= nl2br(htmlspecialchars($ticket['description'])) ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Attachments -->
 <?php if (!empty($attachments)): ?>
 <div class="card shadow-sm mb-4">
@@ -129,30 +139,48 @@
         <?php endif; ?>
 
         <?php foreach ($comments as $comment): ?>
-            <div class="border-bottom pb-2 mb-3">
+            <div class="border-bottom pb-3 mb-3">
+
                 <strong><?= htmlspecialchars($comment['name']) ?></strong>
                 <small class="text-muted ms-2">
                     <?= $comment['created_at'] ?>
                 </small>
-                <p class="mb-0 mt-1">
+
+                <p class="mb-2 mt-2">
                     <?= nl2br(htmlspecialchars($comment['body'])) ?>
                 </p>
+
+                <?php if (!empty($comment['attachments'])): ?>
+                    <ul class="list-group list-group-flush mt-2">
+                        <?php foreach ($comment['attachments'] as $file): ?>
+                            <li class="list-group-item px-0">
+                                <a href="/ticketflow/public/<?= htmlspecialchars($file['file_path']) ?>"
+                                   target="_blank">
+                                    <?= htmlspecialchars($file['file_name']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+
             </div>
         <?php endforeach; ?>
     </div>
 </div>
 
+
 <!-- Add Comment -->
 <div class="card shadow-sm">
     <div class="card-body">
         <form method="post"
-              action="/ticketflow/public/tickets/comment/<?= $ticket['id'] ?>">
+              action="/ticketflow/public/tickets/comment/<?= $ticket['id'] ?>" enctype="multipart/form-data">
             <div class="mb-3">
                 <textarea name="body"
                           class="form-control"
                           rows="3"
                           placeholder="Write a comment..."
                           required></textarea>
+                <input type="file" name="attachment" class="form-control">
             </div>
             <button class="btn btn-primary">
                 Add Comment

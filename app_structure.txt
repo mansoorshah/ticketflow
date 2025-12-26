@@ -1,0 +1,18 @@
+app/views/
+├── auth/
+│   └── login.php
+├── layout/
+│   ├── header.php
+│   ├── footer.php
+│   └── sidebar.php
+├── dashboard.php
+├── home.php
+├── projects/
+│   ├── create.php
+│   └── index.php
+└── tickets/
+    ├── assigned_to_me.php
+    ├── create.php
+    ├── index.php
+    └── show.php
+    

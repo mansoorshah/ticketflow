@@ -81,7 +81,7 @@ class TicketsController
 
 		$ticket = $ticketModel->find($ticketId);
 		$attachments = $ticketModel->attachments($ticketId);
-		$comments = $commentModel->getByTicket($ticketId);
+		$comments = $commentModel->getByTicketWithAttachments($ticketId);
 		$users = $ticketModel->users();
 
 		require_once "../app/views/tickets/show.php";
@@ -92,18 +92,27 @@ class TicketsController
 	{
 		Auth::requireLogin();
 
-		$body = trim($_POST['body']);
+		$commentModel = new Comment();
+		$userId = Auth::user()['id'];
+		$body   = trim($_POST['body'] ?? '');
 
 		if ($body === '') {
-			die("Comment cannot be empty");
+			header("Location: /ticketflow/public/tickets/show/$ticketId");
+			exit;
 		}
 
-		$commentModel = new Comment();
-		$commentModel->create($ticketId, Auth::user()['id'], $body);
+		// ✅ 1. Create comment AND capture its ID
+		$commentId = $commentModel->create($ticketId, $userId, $body);
+
+		// ✅ 2. Attach file USING THAT ID
+		if (!empty($_FILES['attachment']['name'])) {
+			$commentModel->addAttachment($commentId, $_FILES['attachment']);
+		}
 
 		header("Location: /ticketflow/public/tickets/show/$ticketId");
 		exit;
 	}
+
 
 	public function updateStatus($ticketId)
 	{
