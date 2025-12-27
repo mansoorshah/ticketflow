@@ -101,12 +101,10 @@
 <div class="card shadow-sm mb-4">
     <div class="card-body">
         <h5 class="mb-3">Issue Summary</h5>
-        <div class="row g-3"> 
-            <div class="col-md-3">   
+        <div class="row g-3">  
                 <p class="mb-4">
                     <?= nl2br(htmlspecialchars($ticket['description'])) ?>
                 </p>
-            </div>
         </div>
     </div>
 </div>

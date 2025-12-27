@@ -1,5 +1,6 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row min-vh-100 align-items-stretch">
+
 
         <!-- Sidebar -->
         <div class="col-2 sidebar p-3">

@@ -1,20 +1,20 @@
 $(document).ready(function () {
     $('#ticketsTable').DataTable({
-        pageLength: 20,
+        pageLength: 10,
         lengthMenu: [10, 20, 50, 100],
-        ordering: true,
         searching: true,
-        responsive: true,
+        ordering: true,
 
-        dom: 'Bfrtip',
+        dom: '<"row mb-2"<"col-md-6"B><"col-md-6 text-end"f>>rtip',
+
         buttons: [
             {
                 extend: 'excelHtml5',
-                title: 'TicketFlow_Tickets'
+                text: 'Excel'
             },
             {
                 extend: 'pdfHtml5',
-                title: 'TicketFlow_Tickets',
+                text: 'PDF',
                 orientation: 'landscape',
                 pageSize: 'A4'
             }

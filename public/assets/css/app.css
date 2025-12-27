@@ -1,3 +1,6 @@
+body {
+    overflow-x: hidden;
+}
 /* ===== Priority badges ===== */
 .badge-priority-low {
     background-color: #E7F1FF;
@@ -47,4 +50,73 @@
     background-color: #F8D7DA;
     color: #842029 !important;
     font-weight: 600 !important;
+}
+
+/* ===== DataTables toolbar polish ===== */
+
+/* Wrapper spacing */
+.dataTables_wrapper .dt-buttons {
+    margin-bottom: 0.5rem;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons (Excel / PDF) */
+.dataTables_wrapper .dt-button {
+    padding: 0.25rem 0.6rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 0.35rem !important;
+    border: 1px solid #ced4da !important;
+    background: #f8f9fa !important;
+    color: #212529 !important;
+}
+
+.dataTables_wrapper .dt-button:hover {
+    background: #e9ecef !important;
+}
+
+/* Search label */
+.dataTables_wrapper .dataTables_filter label {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Search input */
+.dataTables_wrapper .dataTables_filter input {
+    height: 30px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.85rem;
+    border-radius: 0.35rem;
+    border: 1px solid #ced4da;
+    margin-left: 0.5rem;
+}
+
+/* Align buttons & search nicely */
+.dataTables_wrapper .row {
+    align-items: center;
+}
+
+/* ===== DataTables toolbar alignment fix ===== */
+
+/* Add horizontal padding so toolbar aligns with table */
+.dataTables_wrapper > .row:first-child {
+    padding: 0.5rem 0.75rem 0.25rem 0.75rem;
+}
+
+/* Reduce space between toolbar and table */
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dt-buttons {
+    margin-bottom: 0.25rem;
+}
+
+/* Remove excessive top spacing above table */
+.dataTables_wrapper table.dataTable {
+    margin-top: 0.25rem !important;
+}
+
+/* Ensure sidebar background stretches cleanly */
+.sidebar {
+    background-color: #1f2937; /* keep your dark sidebar color */
 }

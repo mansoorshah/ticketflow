@@ -11,8 +11,8 @@
 <?php else: ?>
 <div class="card shadow-sm">
     <div class="card-body p-0">
-        <table class="table table-hover mb-0">
-            <thead class="table-light">
+        <table id="ticketsTable" class="table table-striped table-hover">
+            <thead>
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
@@ -23,53 +23,19 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if (empty($tickets)): ?>
-                    <tr><td colspan="6" class="text-center">No tickets yet</td></tr>
-                <?php endif; ?>
-                
                 <?php foreach ($tickets as $ticket): ?>
-                <tr>
-                    <td><?= $ticket['id'] ?></td>
-					<td>
-						<a href="/ticketflow/public/tickets/show/<?= $ticket['id'] ?>">
-							<?= htmlspecialchars($ticket['title']) ?>
-						</a>
-					</td>
-                    <td>
-					<?php
-					$priorityColors = [
-						'critical' => 'bg-dark text-danger',   // maroon-like
-						'high'     => 'bg-danger',
-						'medium'   => 'bg-warning text-dark',
-						'low'      => 'bg-primary'
-					];
-					?>
-
-						<span class="badge <?= $priorityColors[$ticket['priority']] ?>">
-							<?= ucfirst($ticket['priority']) ?>
-						</span>
-					</td>
-
-                    </td>
-					
-					<?php
-					$statusColors = [
-						'open' => 'secondary',
-						'in_progress' => 'info',
-						'done' => 'success',
-						'closed' => 'dark'
-					];
-					?>
-
-					<td>
-						<span class="badge bg-<?= $statusColors[$ticket['status']] ?>">
-							<?= ucfirst(str_replace('_',' ', $ticket['status'])) ?>
-						</span>
-					</td>
-
-                    <td><?= $ticket['assignee_name'] ?? 'Unassigned' ?></td>
-                    <td><?= $ticket['created_at'] ?></td>
-                </tr>
+                    <tr>
+                        <td><?= $ticket['id'] ?></td>
+                        <td>
+                            <a href="/ticketflow/public/tickets/show/<?= $ticket['id'] ?>">
+                                <?= htmlspecialchars($ticket['title']) ?>
+                            </a>
+                        </td>
+                        <td><?= BadgeHelper::priority($ticket['priority']) ?></td>
+                        <td><?= BadgeHelper::status($ticket['status']) ?></td>
+                        <td><?= $ticket['assignee_name'] ?? 'Unassigned' ?></td>
+                        <td><?= $ticket['created_at'] ?></td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

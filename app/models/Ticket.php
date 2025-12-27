@@ -11,14 +11,14 @@ class Ticket
     public function getByProject($projectId)
     {
         $stmt = $this->db->prepare("
-            SELECT t.*, u.name AS assignee
+            SELECT t.*, u.name AS assignee_name
             FROM tickets t
-            LEFT JOIN users u ON u.id = t.assignee_id
+            LEFT JOIN users u ON t.assignee_id = u.id
             WHERE t.project_id = ?
             ORDER BY t.created_at DESC
         ");
         $stmt->execute([$projectId]);
-        return $stmt->fetchAll();
+         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function create($projectId, $title, $description, $priority, $reporterId)
