@@ -3,3 +3,20 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'ticketflow');   // the DB you created in phpMyAdmin
 define('DB_USER', 'root');         // adjust if different
 define('DB_PASS', '');             // adjust if different
+define('MAIL_DRIVER', 'smtp');
+
+define('MAIL_HOST', 'smtp.mailersend.net');
+define('MAIL_PORT', 587);              // or 2525 if 587 is blocked
+define('MAIL_ENCRYPTION', 'tls');
+
+define('MAIL_USERNAME', 'MS_YD4iIa@test-r9084zv1oy8gw63d.mlsender.net');
+define('MAIL_PASSWORD', 'mssp.lxsyY6y.jy7zpl9pn95g5vx6.FtNTNPH');
+
+/*define('MAIL_FROM_EMAIL', 'MS_YD4iIa@test-r9084zv1oy8gw63d.mlsender.net');
+define('MAIL_FROM_NAME', 'TicketFlow');*/
+
+define('MAILERSEND_API_TOKEN', 'mlsn.f4f27385d61ad3df1eb4f626c3412f2be4909b8de8e37998d231051a1bdabb2d');
+
+define('MAIL_FROM_EMAIL', 'no-reply@test-r9084zv1oy8gw63d.mlsender.net');
+define('MAIL_FROM_NAME', 'TicketFlow');
+

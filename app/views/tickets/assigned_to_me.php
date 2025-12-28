@@ -11,7 +11,7 @@
 <?php else: ?>
 <div class="card shadow-sm">
     <div class="card-body p-0">
-        <table id="ticketsTable" class="table table-striped table-hover">
+        <table id="ticketsTable" class="table table-striped table-hover table-tickets">
             <thead>
                 <tr>
                     <th>ID</th>

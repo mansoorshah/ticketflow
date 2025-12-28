@@ -11,12 +11,14 @@ session_start();
  */
 spl_autoload_register(function ($class) {
     $paths = [
-        "../app/core/",
-        "../app/controllers/",
-        "../app/models/",
-        "../app/helpers/"
+        __DIR__ . "/../app/core/",
+        __DIR__ . "/../app/controllers/",
+        __DIR__ . "/../app/models/",
+        __DIR__ . "/../app/helpers/",
+        __DIR__ . "/../app/listeners/",
+        __DIR__ . "/../app/events/",
+        __DIR__ . "/../app/endor/PHPMailer/"
     ];
-
     foreach ($paths as $path) {
         $file = $path . $class . ".php";
         if (file_exists($file)) {
@@ -31,8 +33,15 @@ spl_autoload_register(function ($class) {
  | Config
  |-------------------------------------------------------
  */
-require_once "../config/config.php";
-require_once __DIR__ . '/../app/helpers/BadgeHelper.php';
+require_once __DIR__ . "/../config/config.php";
+require_once __DIR__ . "/../app/helpers/BadgeHelper.php";
+
+/*
+ |-------------------------------------------------------
+ | Register Events (AUTOLOADED)
+ |-------------------------------------------------------
+ */
+EventRegistry::register();
 
 /*
  |-------------------------------------------------------

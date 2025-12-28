@@ -22,6 +22,47 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 
+<style>
+/* ============================
+   FINAL DataTables UI Override
+   ============================ */
+
+/* Info text (bottom-left) */
+.dataTables_wrapper .dataTables_info {
+    font-size: 12px !important;
+    padding: 12px 16px !important;
+    color: #4b5563 !important;
+}
+
+/* Pagination container */
+.dataTables_wrapper .dataTables_paginate {
+    padding: 10px 16px !important;
+}
+
+/* Pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    margin: 0 2px !important;
+    border-radius: 6px !important;
+    border: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
+    color: #374151 !important;
+}
+
+/* Active page */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+}
+
+/* Hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+}
+</style>
 
 </body>
 </html>

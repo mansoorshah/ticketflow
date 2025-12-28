@@ -73,22 +73,89 @@ class Ticket
 
 	public function updateStatus($ticketId, $status)
 	{
+		$ticket = $this->find($ticketId);
+
+		$oldStatus = $ticket['status'];
+
 		$stmt = $this->db->prepare("
-			UPDATE tickets SET status = ?, updated_at = NOW()
+			UPDATE tickets
+			SET status = ?, updated_at = NOW()
 			WHERE id = ?
 		");
-		return $stmt->execute([$status, $ticketId]);
+
+		$success = $stmt->execute([$status, $ticketId]);
+
+		if (!$success || $oldStatus === $status) {
+			return false;
+		}
+
+		$userModel = new User();
+
+		$assignee = $ticket['assignee_id']
+			? $userModel->findById($ticket['assignee_id'])
+			: null;
+
+
+		Event::dispatch('ticket.status_changed', [
+			'ticket' => $ticket,
+			'oldStatus' => $oldStatus,
+			'newStatus' => $status,
+			'assignee' => $assignee
+		]);
+
+		return true;
 	}
+
 
 	public function assignUser($ticketId, $userId)
 	{
+		$ticket = $this->find($ticketId);
+
+		$userModel = new User();
+
+		$oldAssignee = $ticket['assignee_id']
+			? $userModel->findById($ticket['assignee_id'])
+			: null;
+
+		$newAssignee = $userId
+			? $userModel->findById($userId)
+			: null;
+
 		$stmt = $this->db->prepare("
-			UPDATE tickets SET assignee_id = ?, updated_at = NOW()
+			UPDATE tickets
+			SET assignee_id = ?, updated_at = NOW()
 			WHERE id = ?
 		");
+
 		$userId = empty($userId) ? null : $userId;
-		return $stmt->execute([$userId, $ticketId]);
+
+		$success = $stmt->execute([$userId, $ticketId]);
+
+		if (!$success) {
+			return false;
+		}
+
+		// 🔔 EVENTS AFTER SUCCESS
+		if ($newAssignee && (!$oldAssignee || $oldAssignee['id'] !== $newAssignee['id'])) {
+			Event::dispatch('ticket.assigned', [
+				'ticket' => $ticket,
+				'assignee' => $newAssignee,
+				'oldAssignee' => $oldAssignee
+			]);
+		}
+
+		if ($oldAssignee && (!$newAssignee || $oldAssignee['id'] !== $newAssignee['id'])) {
+			Event::dispatch('ticket.unassigned', [
+				'ticket' => $ticket,
+				'oldAssignee' => $oldAssignee,
+				'newAssignee' => $newAssignee
+			]);
+		}
+
+		return true;
 	}
+
+
 
 	public function users()
 	{
@@ -98,14 +165,42 @@ class Ticket
 
 	public function updatePriority($ticketId, $priority)
 	{
-		$stmt = $this->db->prepare(
-			"UPDATE tickets SET priority = :priority WHERE id = :id"
-		);
-		return $stmt->execute([
+		$ticket = $this->find($ticketId);
+
+		$oldPriority = $ticket['priority'];
+
+		$stmt = $this->db->prepare("
+			UPDATE tickets
+			SET priority = :priority, updated_at = NOW()
+			WHERE id = :id
+		");
+
+		$success = $stmt->execute([
 			'priority' => $priority,
 			'id' => $ticketId
 		]);
+
+		if (!$success || $oldPriority === $priority) {
+			return false;
+		}
+
+		$userModel = new User();
+
+		$assignee = $ticket['assignee_id']
+			? $userModel->findById($ticket['assignee_id'])
+			: null;
+
+
+		Event::dispatch('ticket.priority_changed', [
+			'ticket' => $ticket,
+			'oldPriority' => $oldPriority,
+			'newPriority' => $priority,
+			'assignee' => $assignee
+		]);
+
+		return true;
 	}
+
 
 	public function getAssignedToUser($userId)
 	{
@@ -203,8 +298,6 @@ class Ticket
 		$stmt->execute([$userId]);
 		return (int) $stmt->fetchColumn();
 	}
-
-
 
 
 }

@@ -23,16 +23,45 @@ class Comment
 
     public function create($ticketId, $userId, $body)
     {
+        $ticketModel = new Ticket();
+        $ticket = $ticketModel->find($ticketId);
+
         $stmt = $this->db->prepare("
             INSERT INTO comments (ticket_id, user_id, body)
             VALUES (?, ?, ?)
         ");
 
-        $stmt->execute([$ticketId, $userId, $body]);
+        $success = $stmt->execute([$ticketId, $userId, $body]);
 
-        // ✅ THIS IS THE FIX
-        return $this->db->lastInsertId();
-    }
+        if (!$success) {
+            return false;
+        }
+
+        $commentId = $this->db->lastInsertId();
+
+        $userModel = new User();
+
+        $assignee = $ticket['assignee_id']
+            ? $userModel->findById($ticket['assignee_id'])
+            : null;
+
+
+        // Avoid notifying the same user who commented
+        if ($assignee && $assignee['id'] !== $userId) {
+            Event::dispatch('ticket.commented', [
+                'ticket' => $ticket,
+                'assignee' => $assignee,
+                'comment' => [
+                    'id' => $commentId,
+                    'body' => $body
+                ],
+                'actor' => Auth::user()
+            ]);
+        }
+
+        return $commentId;
+}
+
 
 
 

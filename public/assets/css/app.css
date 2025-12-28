@@ -120,3 +120,64 @@ body {
 .sidebar {
     background-color: #1f2937; /* keep your dark sidebar color */
 }
+
+/* ============================
+   Tickets Table – SaaS Styling
+   ============================ */
+
+.table-tickets {
+    font-size: 0.85rem; /* smaller, cleaner text */
+}
+
+.table-tickets thead th {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280; /* slate gray */
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 14px;
+}
+
+.table-tickets tbody td {
+    padding: 12px 14px;
+    vertical-align: middle;
+    color: #111827; /* near-black */
+}
+
+.table-tickets tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Links inside table */
+.table-tickets a {
+    font-weight: 500;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.table-tickets a:hover {
+    text-decoration: underline;
+}
+
+/* Badge refinement */
+.table-tickets .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* DataTables UI tweaks */
+.dataTables_wrapper {
+    font-size: 0.8rem;
+}
+
+.dataTables_filter input,
+.dataTables_length select {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+}
+
+

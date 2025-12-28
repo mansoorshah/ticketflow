@@ -5,14 +5,15 @@
 <div class="d-flex justify-content-between mb-3">
     <h2>Tickets</h2>
     <a href="/ticketflow/public/tickets/create/<?= $projectId ?>"
-       class="btn btn-primary">
+    class="btn btn-primary btn-sm btn-new-ticket">
         + New Ticket
     </a>
+
 </div>
 
 <div class="card shadow-sm">
     <div class="card-body p-0">
-        <table id="ticketsTable" class="table table-striped table-hover">
+        <table id="ticketsTable" class="table table-striped table-hover table-tickets">
             <thead>
                 <tr>
                     <th>ID</th>

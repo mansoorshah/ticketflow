@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2025 at 01:45 AM
+-- Generation Time: Dec 28, 2025 at 04:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -79,7 +79,9 @@ INSERT INTO `comments` (`id`, `ticket_id`, `user_id`, `body`, `created_at`) VALU
 (22, 139, 2, 'Yo', '2025-12-26 22:57:44'),
 (23, 1, 1, 'ayo, attachment', '2025-12-26 23:36:22'),
 (24, 166, 1, 'A comment with attachments. PFA', '2025-12-27 00:24:24'),
-(25, 1, 2, 'Why only Admin bheyandchod is commenting on every ticket?', '2025-12-27 00:41:29');
+(25, 1, 2, 'Why only Admin bheyandchod is commenting on every ticket?', '2025-12-27 00:41:29'),
+(26, 2, 2, 'Test comment. The file is added.', '2025-12-28 14:38:17'),
+(27, 2, 2, 'Test comment. The file is added.', '2025-12-28 14:41:28');
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,8 @@ INSERT INTO `comment_attachments` (`id`, `comment_id`, `file_name`, `file_path`,
 (4, 19, 'Screenshot 2024-03-04 142601.png', 'uploads/comments/1766758129_Screenshot_2024-03-04_142601.png', 11320, '2025-12-26 19:08:49'),
 (5, 20, 'Screenshot 2024-03-14 095426.png', 'uploads/comments/1766789081_Screenshot_2024-03-14_095426.png', 10504, '2025-12-27 03:44:41'),
 (6, 23, 'Screenshot 2024-03-08 094557.png', 'uploads/comments/1766792182_Screenshot_2024-03-08_094557.png', 47473, '2025-12-27 04:36:22'),
-(7, 24, '121.png', 'uploads/comments/1766795064_121.png', 37720, '2025-12-27 05:24:24');
+(7, 24, '121.png', 'uploads/comments/1766795064_121.png', 37720, '2025-12-27 05:24:24'),
+(8, 27, 'Screenshot 2024-03-05 154802.png', 'uploads/comments/1766932888_Screenshot_2024-03-05_154802.png', 11289, '2025-12-28 19:41:28');
 
 -- --------------------------------------------------------
 
@@ -129,7 +132,8 @@ CREATE TABLE `projects` (
 
 INSERT INTO `projects` (`id`, `name`, `project_key`, `created_by`, `created_at`) VALUES
 (1, 'New Project', 'CRM123', 1, '2025-12-21 22:12:30'),
-(2, 'Project Number2', 'KEY2', 1, '2025-12-21 22:16:47');
+(2, 'Project Number2', 'KEY2', 1, '2025-12-21 22:16:47'),
+(3, 'MBL Upgrade | R16 to R25', 'MBLUPGRADE', 1, '2025-12-27 13:56:11');
 
 -- --------------------------------------------------------
 
@@ -155,42 +159,42 @@ CREATE TABLE `tickets` (
 --
 
 INSERT INTO `tickets` (`id`, `project_id`, `title`, `description`, `status`, `priority`, `assignee_id`, `reporter_id`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Can\'t see anything', 'Hi I\'m a chutiya user who can\'t see anything, can\'t do anything, is handicapped.', 'in_progress', 'medium', 6, 1, '2025-12-21 22:25:48', '2025-12-26 14:03:22'),
-(2, 2, 'High priority ticket', 'Hi,\r\nthis is a high proiority ticket.', 'open', 'low', 3, 1, '2025-12-21 22:26:06', '2025-12-25 16:53:36'),
-(3, 2, 'Medium ticket', 'medium ticket medium ticket. medium ticket medium ticket.', 'in_progress', 'high', 5, 1, '2025-12-21 22:35:41', '2025-12-25 15:57:35'),
-(4, 2, 'Low Ticket', 'Low ticket. Low ticket. Low ticket. Low ticket.', 'open', 'medium', 5, 1, '2025-12-21 22:36:10', '2025-12-26 09:17:45'),
-(100, 2, 'API created ticket', 'Created via REST API', 'in_progress', 'critical', 1, 1, '2025-12-25 17:27:00', '2025-12-26 09:46:37'),
-(101, 2, 'API created ticket', 'Created via REST API', 'in_progress', 'high', 3, 1, '2025-12-25 17:30:33', '2025-12-25 17:35:22'),
-(102, 2, 'API created ticket 3', 'Created via REST API', 'closed', 'high', NULL, 1, '2025-12-25 17:33:18', '2025-12-25 17:35:34'),
-(103, 2, 'Login fails on production', 'Users are unable to log in after deployment', 'in_progress', 'critical', 9, 1, '2025-12-25 17:57:51', '2025-12-26 14:08:18'),
-(104, 2, 'Login fails on production', 'Users are unable to log in after deployment', 'open', 'high', NULL, 1, '2025-12-25 17:59:30', NULL),
+(1, 2, 'Can\'t see anything', 'Hi I\'m a chutiya user who can\'t see anything, can\'t do anything, is handicapped.', 'done', 'medium', 6, 1, '2025-12-21 22:25:48', '2025-12-28 14:50:41'),
+(2, 2, 'High priority ticket', 'Hi,\r\nthis is a high proiority ticket.', 'open', 'low', 8, 1, '2025-12-21 22:26:06', '2025-12-28 14:50:56'),
+(3, 2, 'Medium ticket', 'medium ticket medium ticket. medium ticket medium ticket.', 'in_progress', 'high', 7, 1, '2025-12-21 22:35:41', '2025-12-28 14:51:09'),
+(4, 2, 'Low Ticket', 'Low ticket. Low ticket. Low ticket. Low ticket.', 'open', 'medium', 2, 1, '2025-12-21 22:36:10', '2025-12-27 20:38:07'),
+(100, 2, 'API created ticket', 'Created via REST API', 'in_progress', 'critical', 2, 1, '2025-12-25 17:27:00', '2025-12-27 18:12:01'),
+(101, 2, 'API created ticket', 'Created via REST API', 'in_progress', 'high', 2, 1, '2025-12-25 17:30:33', '2025-12-27 19:15:13'),
+(102, 2, 'API created ticket 3', 'Created via REST API', 'closed', 'high', 2, 1, '2025-12-25 17:33:18', '2025-12-27 18:06:15'),
+(103, 2, 'Login fails on production', 'Users are unable to log in after deployment', 'in_progress', 'critical', 2, 1, '2025-12-25 17:57:51', '2025-12-27 18:21:33'),
+(104, 2, 'Login fails on production', 'Users are unable to log in after deployment', 'open', 'high', 2, 1, '2025-12-25 17:59:30', '2025-12-27 19:30:23'),
 (105, 2, 'Login fails on production', 'Users are unable to log in after deployment', 'open', 'medium', 7, 1, '2025-12-25 17:59:40', '2025-12-26 14:26:42'),
 (106, 2, 'Unable to view record', 'Users are unable to see records in the system', 'done', 'high', 2, 1, '2025-12-25 18:26:56', '2025-12-26 11:24:31'),
 (107, 1, 'Unable to view record', 'Users are unable to see records in the system', 'open', 'medium', 2, 1, '2025-12-25 18:27:01', '2025-12-25 18:27:01'),
-(108, 1, 'Unable to view record', 'Users are unable to see records in the system', 'open', 'medium', 3, 1, '2025-12-25 18:27:07', '2025-12-25 18:27:07'),
+(108, 1, 'Unable to view record', 'Users are unable to see records in the system', 'done', 'critical', 2, 1, '2025-12-25 18:27:07', '2025-12-27 16:11:08'),
 (109, 1, 'A new issue has arose', 'There is a new issueUsers are unable to see records in the system', 'open', 'high', 2, 1, '2025-12-26 08:32:04', '2025-12-26 08:32:04'),
 (110, 1, 'A new issue has arose', 'There is a new issueUsers are unable to see records in the system', 'open', 'high', 1, 1, '2025-12-26 08:32:08', '2025-12-26 09:46:46'),
 (111, 2, 'A new issue has arose', 'There is a new issueUsers are unable to see records in the system', 'open', 'high', 5, 1, '2025-12-26 08:32:15', '2025-12-26 08:32:15'),
 (112, 1, 'A new issue has arose', 'There is a new issueUsers are unable to see records in the system', 'open', 'high', 3, 1, '2025-12-26 08:32:23', '2025-12-26 08:32:23'),
-(113, 2, 'Unable to create anything', 'Anything can not be created no matter what I do. My life is fucked.', 'closed', 'critical', 7, 1, '2025-12-26 10:50:08', '2025-12-26 12:59:30'),
-(114, 1, 'Error while executing the task', 'Bhai sab phat gaya hai kuch nai chal raha. Bund bhi phat gaee hai sath he.', 'open', 'high', 7, 1, '2025-12-26 11:51:56', '2025-12-26 11:51:56'),
-(115, 2, 'Error while executing the task', 'Bhai sab phat gaya hai kuch nai chal raha. Bund bhi phat gaee hai sath he.', 'open', 'high', 7, 1, '2025-12-26 13:00:31', '2025-12-26 13:00:31'),
+(113, 2, 'Unable to create anything', 'Anything can not be created no matter what I do. My life is fucked.', 'closed', 'critical', 2, 1, '2025-12-26 10:50:08', '2025-12-27 18:24:23'),
+(114, 1, 'Error while executing the task', 'Bhai sab phat gaya hai kuch nai chal raha. Bund bhi phat gaee hai sath he.', 'open', 'high', 2, 1, '2025-12-26 11:51:56', '2025-12-27 18:42:43'),
+(115, 2, 'Error while executing the task', 'Bhai sab phat gaya hai kuch nai chal raha. Bund bhi phat gaee hai sath he.', 'done', 'critical', 2, 1, '2025-12-26 13:00:31', '2025-12-27 19:24:05'),
 (116, 1, 'Login fails with valid credentials', 'Users report valid credentials being rejected on first attempt.', 'open', 'low', 1, 2, '2025-12-26 14:24:48', '2025-12-26 14:24:48'),
 (117, 2, 'API response delay on dashboard load', 'Dashboard takes longer than expected to fetch summary data.', 'open', 'medium', 2, 2, '2025-12-26 14:24:48', '2025-12-26 14:24:48'),
-(118, 1, 'Incorrect ticket count displayed', 'Total tickets shown do not match database records.', 'open', 'high', 3, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
+(118, 1, 'Incorrect ticket count displayed', 'Total tickets shown do not match database records.', 'in_progress', 'medium', 3, 2, '2025-12-26 14:24:49', '2025-12-27 16:07:00'),
 (119, 2, 'File upload progress stuck at 90%', 'Large file uploads appear to freeze near completion.', 'open', 'low', 3, 2, '2025-12-26 14:24:49', '2025-12-26 22:35:44'),
 (120, 1, 'Broken navigation link in sidebar', 'Sidebar link redirects to a non-existing route.', 'open', 'medium', 5, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(121, 2, 'Email notifications not triggering', 'Assignment emails are not being sent to users.', 'open', 'medium', 6, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(122, 1, 'Ticket status resets after refresh', 'Updated ticket status reverts after page reload.', 'open', 'low', 7, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(123, 2, 'Comment formatting lost', 'Line breaks are removed when saving comments.', 'open', 'medium', 8, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
+(121, 2, 'Email notifications not triggering', 'Assignment emails are not being sent to users.', 'open', 'medium', 2, 2, '2025-12-26 14:24:49', '2025-12-27 18:07:36'),
+(122, 1, 'Ticket status resets after refresh', 'Updated ticket status reverts after page reload.', 'open', 'low', 2, 2, '2025-12-26 14:24:49', '2025-12-27 19:17:03'),
+(123, 2, 'Comment formatting lost', 'Line breaks are removed when saving comments.', 'open', 'medium', 2, 2, '2025-12-26 14:24:49', '2025-12-27 19:41:01'),
 (124, 1, 'Search results incomplete', 'Search misses tickets containing special characters.', 'open', 'high', 9, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(125, 2, 'Unauthorized access warning shown', 'Authorized users see access denied message intermittently.', 'open', 'low', NULL, 2, '2025-12-26 14:24:49', NULL),
+(125, 2, 'Unauthorized access warning shown', 'Authorized users see access denied message intermittently.', 'open', 'low', 2, 2, '2025-12-26 14:24:49', '2025-12-27 18:49:04'),
 (126, 1, 'Pagination resets filters', 'Filters are cleared when moving between pages.', 'open', 'medium', 1, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (127, 2, 'Slow ticket creation under load', 'Ticket submission slows down during peak hours.', 'open', 'critical', 2, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (128, 1, 'Attachment preview missing', 'Uploaded images do not show preview thumbnails.', 'open', 'low', 3, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (129, 2, 'Incorrect user role displayed', 'User profile shows outdated role name.', 'open', 'medium', NULL, 2, '2025-12-26 14:24:49', NULL),
 (130, 1, 'PDF export crashes', 'Exporting tickets to PDF fails for large datasets.', 'open', 'high', 5, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(131, 2, 'Excel export encoding issue', 'Special characters appear corrupted in Excel.', 'open', 'low', 6, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
+(131, 2, 'Excel export encoding issue', 'Special characters appear corrupted in Excel.', 'open', 'low', 2, 2, '2025-12-26 14:24:49', '2025-12-27 17:20:28'),
 (132, 1, 'Session expires too early', 'Users are logged out before session timeout.', 'open', 'medium', 7, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (133, 2, 'Assignee filter incorrect', 'Filtering by assignee returns wrong tickets.', 'open', 'high', 8, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (134, 1, 'Priority badge color mismatch', 'Priority color does not match severity.', 'open', 'low', 9, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
@@ -202,16 +206,16 @@ INSERT INTO `tickets` (`id`, `project_id`, `title`, `description`, `status`, `pr
 (140, 1, 'Audit log missing entries', 'Some ticket actions are not logged.', 'open', 'low', 5, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (141, 2, 'Dashboard widgets misaligned', 'Dashboard boxes overlap on smaller screens.', 'open', 'medium', 6, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (142, 1, 'Role permission leak', 'Non-admin users can edit restricted fields.', 'open', 'high', 7, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(143, 2, 'Time tracking incorrect', 'Logged work hours do not sum correctly.', 'open', 'low', 8, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
+(143, 2, 'Time tracking incorrect', 'Logged work hours do not sum correctly.', 'open', 'low', 2, 2, '2025-12-26 14:24:49', '2025-12-27 19:10:55'),
 (144, 1, 'Ticket deletion not confirmed', 'Tickets are deleted without confirmation prompt.', 'open', 'medium', 9, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (145, 2, 'Bulk actions partially applied', 'Bulk updates affect only some tickets.', 'open', 'high', NULL, 2, '2025-12-26 14:24:49', NULL),
 (146, 1, 'Notification badge not updating', 'Unread notification count remains stale.', 'open', 'low', 1, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(147, 2, 'Search indexing delay', 'New tickets are not searchable immediately.', 'open', 'medium', 6, 2, '2025-12-26 14:24:49', '2025-12-26 23:37:19'),
+(147, 2, 'Search indexing delay', 'New tickets are not searchable immediately.', 'open', 'high', 2, 2, '2025-12-26 14:24:49', '2025-12-27 17:54:04'),
 (148, 1, 'Dark mode contrast issue', 'Text becomes unreadable in dark mode.', 'open', 'high', 3, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (149, 2, 'Attachment delete fails', 'Removing attachments throws server error.', 'open', 'low', NULL, 2, '2025-12-26 14:24:49', NULL),
 (150, 1, 'Ticket history incomplete', 'Some status changes missing in history.', 'open', 'medium', 5, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(151, 2, 'Project archive not working', 'Archived projects still appear active.', 'open', 'high', 6, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(152, 1, 'User dropdown truncated', 'Assignee dropdown cuts off long names.', 'open', 'low', 7, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
+(151, 2, 'Project archive not working', 'Archived projects still appear active.', 'open', 'high', 2, 2, '2025-12-26 14:24:49', '2025-12-27 17:14:25'),
+(152, 1, 'User dropdown truncated', 'Assignee dropdown cuts off long names.', 'open', 'low', 2, 2, '2025-12-26 14:24:49', '2025-12-27 18:51:01'),
 (153, 2, 'Sorting resets after refresh', 'Applied sorting order is lost.', 'open', 'medium', 8, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (154, 1, 'Ticket cloning duplicates attachments', 'Cloned tickets copy attachments unexpectedly.', 'open', 'high', 9, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (155, 2, 'API rate limit too strict', 'Normal usage exceeds API rate limit.', 'open', 'low', NULL, 2, '2025-12-26 14:24:49', NULL),
@@ -221,11 +225,12 @@ INSERT INTO `tickets` (`id`, `project_id`, `title`, `description`, `status`, `pr
 (159, 2, 'Cross-project ticket visibility bug', 'Tickets appear in wrong project lists.', 'open', 'medium', NULL, 2, '2025-12-26 14:24:49', NULL),
 (160, 1, 'Ticket numbering skips values', 'Auto-increment ticket numbers are not sequential.', 'open', 'high', 5, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (161, 2, 'Logout redirect incorrect', 'Logout redirects to wrong landing page.', 'open', 'low', 6, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
-(162, 1, 'Assignee change not logged', 'Changing assignee does not appear in history.', 'open', 'medium', 7, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
+(162, 1, 'Assignee change not logged', 'Changing assignee does not appear in history.', 'open', 'medium', 2, 2, '2025-12-26 14:24:49', '2025-12-27 19:24:55'),
 (163, 2, 'Mobile layout breaks on comments', 'Comment section overflows on mobile screens.', 'open', 'high', 8, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (164, 1, 'Ticket merge loses data', 'Merged tickets drop older comments.', 'open', 'low', 9, 2, '2025-12-26 14:24:49', '2025-12-26 14:24:49'),
 (165, 2, 'System logs missing errors', 'Critical errors are not written to logs.', 'open', 'medium', NULL, 2, '2025-12-26 14:24:49', NULL),
-(166, 2, 'A new test ticket has been opened', 'This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened.', 'open', 'medium', NULL, 1, '2025-12-27 00:22:13', NULL);
+(166, 2, 'A new test ticket has been opened', 'This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened. This is some dummy text. A new test ticket has been opened.', 'open', 'medium', NULL, 1, '2025-12-27 00:22:13', NULL),
+(167, 3, 'OFS string parsing issue - Response string longer than required', 'While posting an ATM message through OFS.SOURCE>ATM.OFS, the response we get is not as per the accepted standard. Screenshots attached.', 'in_progress', 'critical', 9, 2, '2025-12-28 15:08:48', '2025-12-28 15:12:29');
 
 -- --------------------------------------------------------
 
@@ -248,7 +253,8 @@ CREATE TABLE `ticket_attachments` (
 INSERT INTO `ticket_attachments` (`id`, `ticket_id`, `file_name`, `file_path`, `uploaded_at`) VALUES
 (1, 3, 'upwork.PNG', 'uploads/6948763d83395.png', '2025-12-21 22:35:41'),
 (2, 4, 'The Sopranos Season 4 Episode 12 - Eloise.avi_snapshot_52.07_[2019.09.20_14.22.10].jpg', 'uploads/6948765ab6ed9.jpg', '2025-12-21 22:36:10'),
-(3, 113, 'Screenshot 2024-03-04 145209.png', 'uploads/694e68606ab6a.png', '2025-12-26 10:50:08');
+(3, 113, 'Screenshot 2024-03-04 145209.png', 'uploads/694e68606ab6a.png', '2025-12-26 10:50:08'),
+(4, 167, 'Screenshot 2024-03-01 171428.png', 'uploads/695148008e7c3.png', '2025-12-28 15:08:48');
 
 -- --------------------------------------------------------
 
@@ -271,9 +277,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `api_token`) VALUES
-(1, 'Admin', 'admin@ticketflow.local', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'admin', '2025-12-21 21:56:41', '3f682f8563cc53e0314984067d04936bfda339c4576ec24493a086b8275c4f2e'),
-(2, 'Mansoor Shah', 'user1@ticketflow.local', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', 'a8d74fa41ea862069086f997442c42072404a09e9d84717c685507bd2729faec'),
-(3, 'Ziyad Alvi', 'user2@ticketflow.local', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', NULL),
+(1, 'Admin', 'abcd.efgh@live.com', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'admin', '2025-12-21 21:56:41', '3f682f8563cc53e0314984067d04936bfda339c4576ec24493a086b8275c4f2e'),
+(2, 'Mansoor Shah', 'mansoorshah@live.com', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', 'a8d74fa41ea862069086f997442c42072404a09e9d84717c685507bd2729faec'),
+(3, 'Ziyad Alvi', 'ticketflow1@outlook.com', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', NULL),
 (5, 'Taloor Ansari', 'user3@ticketflow.local', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', NULL),
 (6, 'Arsalan Pervez', 'user4@ticketflow.local', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', NULL),
 (7, 'Uzain Ali Khan', 'user5@ticketflow.local', '$2y$10$9F2BIbCIp3uqxHf.ga6QAOxbe/9wHrtcw5fr4WTEDJuunyLJDd2QC', 'user', '2025-12-21 21:56:41', NULL),
@@ -350,31 +356,31 @@ ALTER TABLE `audit_logs`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `comment_attachments`
 --
 ALTER TABLE `comment_attachments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
 -- AUTO_INCREMENT for table `ticket_attachments`
 --
 ALTER TABLE `ticket_attachments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
