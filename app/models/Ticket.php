@@ -299,5 +299,77 @@ class Ticket
 		return (int) $stmt->fetchColumn();
 	}
 
+	public function getAssignedOverTime($userId, $days = 30)
+	{
+		$stmt = $this->db->prepare("
+			SELECT DATE(created_at) as date, COUNT(*) as count
+			FROM tickets
+			WHERE assignee_id = ?
+			AND created_at >= DATE_SUB(NOW(), INTERVAL ? DAY)
+			GROUP BY DATE(created_at)
+			ORDER BY date ASC
+		");
+		$stmt->execute([$userId, $days]);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function getRecentTickets($limit = 10)
+	{
+		$stmt = $this->db->prepare("
+			SELECT t.*, 
+				   u.name AS assignee_name,
+				   p.name AS project_name
+			FROM tickets t
+			LEFT JOIN users u ON t.assignee_id = u.id
+			LEFT JOIN projects p ON t.project_id = p.id
+			ORDER BY t.created_at DESC
+			LIMIT ?
+		");
+		$stmt->bindValue(1, (int)$limit, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function getCriticalTickets($limit = 10)
+	{
+		$stmt = $this->db->prepare("
+			SELECT t.*, 
+				   u.name AS assignee_name,
+				   p.name AS project_name
+			FROM tickets t
+			LEFT JOIN users u ON t.assignee_id = u.id
+			LEFT JOIN projects p ON t.project_id = p.id
+			WHERE t.priority = 'critical'
+			AND t.status NOT IN ('done', 'closed')
+			ORDER BY t.created_at DESC
+			LIMIT ?
+		");
+		$stmt->bindValue(1, (int)$limit, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function delete($ticketId)
+	{
+		// Delete attachments first
+		$stmt = $this->db->prepare("DELETE FROM ticket_attachments WHERE ticket_id = ?");
+		$stmt->execute([$ticketId]);
+
+		// Delete comment attachments
+		$stmt = $this->db->prepare("
+			DELETE FROM comment_attachments 
+			WHERE comment_id IN (SELECT id FROM comments WHERE ticket_id = ?)
+		");
+		$stmt->execute([$ticketId]);
+
+		// Delete comments
+		$stmt = $this->db->prepare("DELETE FROM comments WHERE ticket_id = ?");
+		$stmt->execute([$ticketId]);
+
+		// Delete ticket
+		$stmt = $this->db->prepare("DELETE FROM tickets WHERE id = ?");
+		return $stmt->execute([$ticketId]);
+	}
+
 
 }

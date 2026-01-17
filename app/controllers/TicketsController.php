@@ -14,6 +14,10 @@ class TicketsController
     public function create($projectId)
     {
         Auth::requireLogin();
+        
+        $ticketModel = new Ticket();
+        $users = $ticketModel->users();
+        
         require_once "../app/views/tickets/create.php";
     }
 
@@ -24,6 +28,7 @@ class TicketsController
 		$title = trim($_POST['title']);
 		$description = trim($_POST['description']);
 		$priority = $_POST['priority'];
+		$assigneeId = !empty($_POST['assignee_id']) ? $_POST['assignee_id'] : null;
 
 		if ($title === '') {
 			die("Title is required");
@@ -42,6 +47,11 @@ class TicketsController
 
 		// Get newly created ticket ID
 		$ticketId = Database::getInstance()->lastInsertId();
+
+		// Assign user if selected
+		if ($assigneeId) {
+			$ticketModel->assignUser($ticketId, $assigneeId);
+		}
 
 		// Handle attachment
 		if (!empty($_FILES['attachment']['name'])) {
@@ -104,9 +114,23 @@ class TicketsController
 		// ✅ 1. Create comment AND capture its ID
 		$commentId = $commentModel->create($ticketId, $userId, $body);
 
-		// ✅ 2. Attach file USING THAT ID
-		if (!empty($_FILES['attachment']['name'])) {
-			$commentModel->addAttachment($commentId, $_FILES['attachment']);
+		// ✅ 2. Attach multiple files if provided
+		if (!empty($_FILES['attachments']['name'][0])) {
+			$fileCount = count($_FILES['attachments']['name']);
+			
+			for ($i = 0; $i < $fileCount; $i++) {
+				if ($_FILES['attachments']['error'][$i] === UPLOAD_ERR_OK) {
+					$file = [
+						'name' => $_FILES['attachments']['name'][$i],
+						'type' => $_FILES['attachments']['type'][$i],
+						'tmp_name' => $_FILES['attachments']['tmp_name'][$i],
+						'error' => $_FILES['attachments']['error'][$i],
+						'size' => $_FILES['attachments']['size'][$i]
+					];
+					
+					$commentModel->addAttachment($commentId, $file);
+				}
+			}
 		}
 
 		header("Location: /ticketflow/public/tickets/show/$ticketId");
@@ -180,8 +204,46 @@ class TicketsController
 		require_once "../app/views/tickets/assigned_to_me.php";
 	}
 
+	public function delete($ticketId)
+	{
+		Auth::requireLogin();
 
+		$ticketModel = new Ticket();
+		$ticket = $ticketModel->find($ticketId);
 
-	
+		// Check if user is authorized (ticket creator or admin)
+		if (Auth::user()['id'] != $ticket['reporter_id'] && Auth::user()['role'] != 'admin') {
+			die("Unauthorized");
+		}
+
+		$projectId = $ticket['project_id'];
+		$ticketModel->delete($ticketId);
+
+		header("Location: /ticketflow/public/tickets/index/$projectId");
+		exit;
+	}
+
+	public function deleteComment($commentId)
+	{
+		Auth::requireLogin();
+
+		$commentModel = new Comment();
+		$comment = $commentModel->getById($commentId);
+
+		if (!$comment) {
+			die("Comment not found");
+		}
+
+		// Check if user is authorized (comment creator or admin)
+		if (Auth::user()['id'] != $comment['user_id'] && Auth::user()['role'] != 'admin') {
+			die("Unauthorized");
+		}
+
+		$ticketId = $comment['ticket_id'];
+		$commentModel->delete($commentId);
+
+		header("Location: /ticketflow/public/tickets/show/$ticketId");
+		exit;
+	}
 
 }

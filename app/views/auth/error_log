@@ -1,0 +1,5 @@
+[01-Jan-2026 00:52:20 UTC] PHP Warning:  require_once(../app/views/layout/header.php): Failed to open stream: No such file or directory in /home/peoplepu/public_html/ticketflow/app/views/auth/login.php on line 2
+[01-Jan-2026 00:52:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../app/views/layout/header.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/peoplepu/public_html/ticketflow/app/views/auth/login.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/peoplepu/public_html/ticketflow/app/views/auth/login.php on line 2

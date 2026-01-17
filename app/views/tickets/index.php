@@ -2,13 +2,12 @@
 <?php $title = "Tickets"; ?>
 <?php require_once "../app/views/layout/sidebar.php"; ?>
 
-<div class="d-flex justify-content-between mb-3">
+<div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Tickets</h2>
     <a href="/ticketflow/public/tickets/create/<?= $projectId ?>"
-    class="btn btn-primary btn-sm btn-new-ticket">
+       class="btn btn-primary rounded-3 px-4 py-2 fw-semibold">
         + New Ticket
     </a>
-
 </div>
 
 <div class="card shadow-sm">

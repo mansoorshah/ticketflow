@@ -1,6 +1,48 @@
 body {
     overflow-x: hidden;
 }
+
+/* ===== Dark Mode Badge Adjustments ===== */
+[data-theme="dark"] .badge-priority-low {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+}
+
+[data-theme="dark"] .badge-priority-medium {
+    background-color: #713f12;
+    color: #fcd34d;
+}
+
+[data-theme="dark"] .badge-priority-high {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+[data-theme="dark"] .badge-priority-critical {
+    background-color: #991b1b;
+    color: #fecaca;
+}
+
+[data-theme="dark"] .badge-status-open {
+    background-color: #374151;
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .badge-status-in-progress {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+}
+
+[data-theme="dark"] .badge-status-done {
+    background-color: #14532d;
+    color: #86efac;
+}
+
+[data-theme="dark"] .badge-status-closed {
+    background-color: #1f2937;
+    color: #9ca3af;
+}
+
 /* ===== Priority badges ===== */
 .badge-priority-low {
     background-color: #E7F1FF;

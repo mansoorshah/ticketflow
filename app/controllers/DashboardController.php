@@ -1,14 +1,19 @@
 <?php
 
-require "../app/views/dashboard.php";
 class DashboardController
 {
     public function index()
     {
         Auth::requireLogin();
-        require_once "../app/views/dashboard.php";
+        
         $ticketModel = new Ticket();
-        $userId = $_SESSION['user']['id'];
+        $userId = Auth::user()['id'];
+        
         $assignedCount = $ticketModel->countAssignedToUser($userId);
+        $assignedOverTime = $ticketModel->getAssignedOverTime($userId, 30);
+        $recentTickets = $ticketModel->getRecentTickets(5);
+        $criticalTickets = $ticketModel->getCriticalTickets(5);
+        
+        require_once "../app/views/dashboard.php";
     }
 }

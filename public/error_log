@@ -1,0 +1,96 @@
+[28-Dec-2025 16:43:07 UTC] PHP Fatal error:  Uncaught Error: Class "Comment" not found in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php:80
+Stack trace:
+#0 /home/peoplepu/public_html/ticketflow/app/core/Router.php(34): TicketsController->show('103')
+#1 /home/peoplepu/public_html/ticketflow/public/index.php(51): Router::dispatch()
+#2 {main}
+  thrown in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php on line 80
+[28-Dec-2025 16:43:23 UTC] PHP Fatal error:  Uncaught Error: Class "Comment" not found in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php:80
+Stack trace:
+#0 /home/peoplepu/public_html/ticketflow/app/core/Router.php(34): TicketsController->show('100')
+#1 /home/peoplepu/public_html/ticketflow/public/index.php(51): Router::dispatch()
+#2 {main}
+  thrown in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php on line 80
+[28-Dec-2025 16:43:28 UTC] PHP Fatal error:  Uncaught Error: Class "Comment" not found in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php:80
+Stack trace:
+#0 /home/peoplepu/public_html/ticketflow/app/core/Router.php(34): TicketsController->show('167')
+#1 /home/peoplepu/public_html/ticketflow/public/index.php(51): Router::dispatch()
+#2 {main}
+  thrown in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php on line 80
+[28-Dec-2025 16:43:49 UTC] PHP Fatal error:  Uncaught Error: Class "Comment" not found in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php:80
+Stack trace:
+#0 /home/peoplepu/public_html/ticketflow/app/core/Router.php(34): TicketsController->show('1')
+#1 /home/peoplepu/public_html/ticketflow/public/index.php(51): Router::dispatch()
+#2 {main}
+  thrown in /home/peoplepu/public_html/ticketflow/app/controllers/TicketsController.php on line 80
+[28-Dec-2025 19:40:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 19:40:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 19:40:59 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 19:40:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 19:40:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 19:40:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 19:40:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 19:40:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 19:40:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[28-Dec-2025 20:19:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 20:19:30 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 20:19:30 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 20:19:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 20:19:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 20:19:30 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 20:19:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 20:19:30 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 20:19:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 23:00:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[28-Dec-2025 23:00:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[29-Dec-2025 08:43:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[29-Dec-2025 08:43:27 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[29-Dec-2025 08:43:27 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[29-Dec-2025 08:43:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[29-Dec-2025 08:43:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[29-Dec-2025 08:43:27 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[29-Dec-2025 08:43:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[29-Dec-2025 08:43:27 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[29-Dec-2025 08:43:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[29-Dec-2025 08:43:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[29-Dec-2025 08:43:28 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[29-Dec-2025 08:43:28 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[29-Dec-2025 08:43:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[29-Dec-2025 08:43:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[29-Dec-2025 08:43:28 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[29-Dec-2025 08:43:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[29-Dec-2025 08:43:28 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[29-Dec-2025 08:43:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36
+[31-Dec-2025 12:01:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[31-Dec-2025 12:01:53 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/layout/sidebar.php on line 16
+[31-Dec-2025 12:01:53 UTC] PHP Warning:  Undefined array key "user" in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[31-Dec-2025 12:01:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 8
+[31-Dec-2025 12:01:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[31-Dec-2025 12:01:53 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 20
+[31-Dec-2025 12:01:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[31-Dec-2025 12:01:53 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/peoplepu/public_html/ticketflow/app/views/dashboard.php on line 29
+[31-Dec-2025 12:01:53 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/peoplepu/public_html/ticketflow/app/views/layout/header.php:1) in /home/peoplepu/public_html/ticketflow/app/core/Auth.php on line 36

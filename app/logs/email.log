@@ -1,0 +1,137 @@
+[2025-12-28 16:38:38] Event: ticket.assigned | {"ticket_id":1,"to":"mansoorshah@live.com"}
+[2025-12-28 16:48:24] Event: ticket.assigned | {"ticket_id":103,"to":"abcd.efgh@live.com"}
+[2025-12-28 16:51:29] Event: ticket.assigned | {"ticket_id":103,"to":"mansoorshah@live.com"}
+[2025-12-28 16:54:54] Event: ticket.assigned | {"ticket_id":3,"to":"mansoorshah@live.com"}
+[2025-12-28 17:07:40] Event: ticket.assigned | {"ticket_id":3,"to":"user4@ticketflow.local"}
+[2025-12-28 17:07:44] Event: ticket.assigned | {"ticket_id":3,"to":"mansoorshah@live.com"}
+[2025-12-28 17:09:36] Event: ticket.assigned | {"ticket_id":3,"to":"user4@ticketflow.local"}
+[2025-12-28 17:18:09] Event: ticket.assigned | {"ticket_id":3,"to":"abcd.efgh@live.com"}
+[2025-12-28 17:18:11] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-28 17:18:11] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:18:14] Event: ticket.assigned | {"ticket_id":3,"to":"mansoorshah@live.com"}
+[2025-12-28 17:18:15] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-28 17:18:15] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 16:51:51] Event: ticket.assigned | {"ticket_id":2,"to":"mansoorshah@live.com"}
+[2025-12-28 16:51:51] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-28 16:51:51] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 16:54:19] Email template missing | {"template":"ticket_priority_changed"}
+[2025-12-28 16:54:22] Email template missing | {"template":"ticket_status_changed"}
+[2025-12-28 16:54:26] Event: ticket.assigned | {"ticket_id":103,"to":"user6@ticketflow.local"}
+[2025-12-28 16:54:26] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-28 16:54:26] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 16:54:29] Event: ticket.assigned | {"ticket_id":103,"to":"mansoorshah@live.com"}
+[2025-12-28 16:54:30] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-28 16:54:30] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:26:48] Event: ticket.assigned | {"ticket_id":102,"to":"abcd.efgh@live.com"}
+[2025-12-28 17:26:48] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-28 17:26:48] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:26:55] Event: ticket.assigned | {"ticket_id":107,"to":"abcd.efgh@live.com"}
+[2025-12-28 17:26:55] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-28 17:26:55] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:27:04] Event: ticket.assigned | {"ticket_id":108,"to":"user5@ticketflow.local"}
+[2025-12-28 17:27:04] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-28 17:27:04] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:27:40] Event: ticket.assigned | {"ticket_id":138,"to":"mansoorshah@live.com"}
+[2025-12-28 17:27:40] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-28 17:27:40] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:31:02] Event: ticket.assigned | {"ticket_id":103,"to":"user5@ticketflow.local"}
+[2025-12-28 17:31:02] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-28 17:31:02] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-28 17:49:50] Email template missing | {"template":"ticket_commented"}
+[2025-12-28 17:55:13] Event: ticket.assigned | {"ticket_id":167,"to":"mansoorshah@live.com"}
+[2025-12-28 17:55:13] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-28 17:55:13] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-29 08:50:25] Event: ticket.assigned | {"ticket_id":104,"to":"user7@ticketflow.local"}
+[2025-12-29 08:50:25] Email sent via MailerSend | {"to":"user7@ticketflow.local"}
+[2025-12-29 08:50:25] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-29 08:50:27] Event: ticket.assigned | {"ticket_id":104,"to":"mansoorshah@live.com"}
+[2025-12-29 08:50:27] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-29 08:50:27] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-30 00:30:58] Event: ticket.assigned | {"ticket_id":2,"to":"user6@ticketflow.local"}
+[2025-12-30 00:30:58] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2025-12-30 00:30:58] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-30 00:31:00] Event: ticket.assigned | {"ticket_id":2,"to":"mansoorshah@live.com"}
+[2025-12-30 00:31:01] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-30 00:31:01] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-31 09:01:58] Event: ticket.assigned | {"ticket_id":2,"to":"user7@ticketflow.local"}
+[2025-12-31 09:01:58] Email sent via MailerSend | {"to":"user7@ticketflow.local"}
+[2025-12-31 09:01:58] Email template missing | {"template":"ticket_unassigned"}
+[2025-12-31 09:02:02] Event: ticket.assigned | {"ticket_id":2,"to":"mansoorshah@live.com"}
+[2025-12-31 09:02:02] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2025-12-31 09:02:02] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-01 00:54:17] Event: ticket.assigned | {"ticket_id":167,"to":"user7@ticketflow.local"}
+[2026-01-01 00:54:17] Email sent via MailerSend | {"to":"user7@ticketflow.local"}
+[2026-01-01 00:54:17] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-01 00:54:19] Event: ticket.assigned | {"ticket_id":167,"to":"mansoorshah@live.com"}
+[2026-01-01 00:54:19] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2026-01-01 00:54:19] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-01 00:57:52] Event: ticket.assigned | {"ticket_id":101,"to":"abcd.efgh@live.com"}
+[2026-01-01 00:57:52] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2026-01-01 00:57:52] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-01 00:57:54] Event: ticket.assigned | {"ticket_id":101,"to":"mansoorshah@live.com"}
+[2026-01-01 00:57:54] Email sent via MailerSend | {"to":"mansoorshah@live.com"}
+[2026-01-01 00:57:54] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-01 00:58:03] Event: ticket.assigned | {"ticket_id":101,"to":"user4@ticketflow.local"}
+[2026-01-01 00:58:03] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2026-01-01 00:58:03] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-01 01:07:23] Event: ticket.assigned | {"ticket_id":3,"to":"user4@ticketflow.local"}
+[2026-01-01 01:07:23] MailerSend API error | {"response":"{\"message\":\"You have reached trial account unique recipients limit. #MS42225\",\"errors\":{\"to\":[\"You have reached trial account unique recipients limit. #MS42225\"]}}"}
+[2026-01-01 01:07:23] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:17:11] Event: ticket.assigned | {"ticket_id":117,"to":"user7@ticketflow.local"}
+[2026-01-09 10:17:11] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:17:11] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:17:15] Event: ticket.assigned | {"ticket_id":117,"to":"mansoorshah@live.com"}
+[2026-01-09 10:17:15] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:17:15] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:20:39] Event: ticket.assigned | {"ticket_id":103,"to":"mansoorshah@live.com"}
+[2026-01-09 10:20:39] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:20:39] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:27:06] Event: ticket.assigned | {"ticket_id":113,"to":"user4@ticketflow.local"}
+[2026-01-09 10:27:06] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:27:06] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:27:08] Event: ticket.assigned | {"ticket_id":113,"to":"mansoorshah@live.com"}
+[2026-01-09 10:27:08] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:27:08] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:27:43] Event: ticket.assigned | {"ticket_id":106,"to":"user7@ticketflow.local"}
+[2026-01-09 10:27:43] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:27:43] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-09 10:27:45] Event: ticket.assigned | {"ticket_id":106,"to":"mansoorshah@live.com"}
+[2026-01-09 10:27:45] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-09 10:27:45] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-13 07:18:47] Event: ticket.assigned | {"ticket_id":101,"to":"mansoorshah@live.com"}
+[2026-01-13 07:18:47] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-13 07:18:47] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-13 08:35:31] Event: ticket.assigned | {"ticket_id":167,"to":"abcd.efgh@live.com"}
+[2026-01-13 08:35:32] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-13 08:35:32] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-13 08:35:34] Event: ticket.assigned | {"ticket_id":167,"to":"mansoorshah@live.com"}
+[2026-01-13 08:35:35] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-13 08:35:35] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-14 12:32:24] Event: ticket.assigned | {"ticket_id":102,"to":"user6@ticketflow.local"}
+[2026-01-14 12:32:25] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-14 12:32:25] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-14 12:32:27] Event: ticket.assigned | {"ticket_id":102,"to":"mansoorshah@live.com"}
+[2026-01-14 12:32:28] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-14 12:32:28] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-15 13:14:05] Event: ticket.assigned | {"ticket_id":168,"to":"ticketflow1@outlook.com"}
+[2026-01-15 13:14:06] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-15 13:14:13] Event: ticket.assigned | {"ticket_id":168,"to":"user5@ticketflow.local"}
+[2026-01-15 13:14:14] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-15 13:14:14] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-15 13:29:01] Event: ticket.assigned | {"ticket_id":169,"to":"mansoorshah@live.com"}
+[2026-01-15 13:29:02] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-15 17:04:35] Event: ticket.assigned | {"ticket_id":167,"to":"user3@ticketflow.local"}
+[2026-01-15 17:04:36] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-15 17:04:36] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-15 17:06:09] Event: ticket.assigned | {"ticket_id":169,"to":"user6@ticketflow.local"}
+[2026-01-15 17:06:10] MailerSend API error | {"response":"{\"message\":\"Unauthenticated.\"}"}
+[2026-01-15 17:06:10] Email template missing | {"template":"ticket_unassigned"}
+[2026-01-15 17:11:05] Email template missing | {"template":"ticket_commented"}
+[2026-01-15 17:11:18] Email template missing | {"template":"ticket_priority_changed"}
+[2026-01-15 21:37:20] Email template missing | {"template":"ticket_commented"}
+[2026-01-15 21:38:07] Email template missing | {"template":"ticket_commented"}
+[2026-01-15 21:42:02] Email template missing | {"template":"ticket_status_changed"}
+[2026-01-15 21:42:03] Email template missing | {"template":"ticket_status_changed"}
+[2026-01-15 21:44:52] Email template missing | {"template":"ticket_commented"}
+[2026-01-15 22:03:34] Email template missing | {"template":"ticket_commented"}
+[2026-01-16 15:15:25] Email template missing | {"template":"ticket_commented"}
